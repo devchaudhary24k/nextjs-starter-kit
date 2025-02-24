@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Next.js Starter Template",
   description:
-    "A starter template for Next.js projects. This template includes lietral everything you'll need to make a full stack application.",
+    "A starter template for Next.js projects. This template includes literal everything you'll need to make a full stack application.",
 };
 
 export default function RootLayout({
