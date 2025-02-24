@@ -1,5 +1,6 @@
 {
   "name": "nextjs-starter-kit",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +9,10 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix .",
+    "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check-types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
