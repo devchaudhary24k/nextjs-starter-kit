@@ -36,8 +36,9 @@ const eslintConfig = [
       "check-file/folder-naming-convention": [
         "error",
         {
-          // all folders within src (except __tests__)should be named in kebab-case
+          // all folders within src (except __tests__ and Dynamic Routes )should be named in kebab-case
           "src/**/!(__tests__)": "KEBAB_CASE",
+          "src/**/!^[.*": "KEBAB_CASE",
         },
       ],
     },
