@@ -1,14 +1,14 @@
 ### TODO
  - [x] Add Icon Library
- - [ ] Add Theme
- - [ ] Not Found Page
- - [ ] Typesafe Env
- - [ ] Process.env Linter Rule
- - [ ] Authentication ( Better Auth )
- - [ ] Middleware
+ - [x] Add Theme
+ - [x] Typesafe Env
+ - [x] Process.env Linter Rule
  - [ ] Database
+ - [ ] Drizzle
  - [ ] Docker
  - [ ] Docker/Postgres
- - [ ] Drizzle
+ - [ ] Not Found Page
+ - [ ] Authentication ( Better Auth )
+ - [ ] Middleware
  - [ ] Server Action Library
  - [ ] Bulletproof React
