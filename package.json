@@ -14,7 +14,7 @@
     "prepare": "husky",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
     "clear": "git clean -xdf node_modules",
-    "bumb-deps": "bunx npm-check-updates -u && bun install",
+    "bump-deps": "bunx npm-check-updates -u && bun install",
     "bump-ui": "bunx shadcn@canary add --all --overwrite"
   },
   "dependencies": {
