@@ -14,7 +14,7 @@
     "prepare": "husky",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
     "clear": "git clean -xdf node_modules",
-    "bump-deps": "bunx npm-check-updates -u && bun install",
+    "bump-deps": "bunx npm-check-updates -i",
     "bump-ui": "bunx shadcn@canary add --all --overwrite"
   },
   "dependencies": {
@@ -50,7 +50,7 @@
     "add": "^2.0.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "cmdk": "1.0.0",
+    "cmdk": "1.0.4",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.2",
     "input-otp": "^1.4.2",
@@ -75,7 +75,7 @@
     "@commitlint/config-conventional": "^19.7.1",
     "@eslint/eslintrc": "^3",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

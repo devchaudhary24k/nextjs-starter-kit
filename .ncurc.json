@@ -1,4 +1,0 @@
-{
-  "target": "minor",
-  "reject": ["react-day-picker"]
-}
