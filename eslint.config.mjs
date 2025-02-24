@@ -17,6 +17,10 @@ const eslintConfig = [
     rules: {
       "prefer-arrow-callback": "error",
       "prefer-template": "error",
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports" },
+      ],
       "check-file/filename-naming-convention": [
         "error",
         {

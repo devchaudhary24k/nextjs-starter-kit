@@ -7,7 +7,7 @@
   "workbench.editor.customLabels.patterns": {
     "**/app/**/page.tsx": "${dirname} - Page",
     "**/app/**/layout.tsx": "${dirname} - Layout",
-    "**/components/**/index.tsx": "${dirname} - Component",
+    "**/components/**/index.tsx": "${dirname} - Component"
   },
   "files.associations": {
     "*.css": "tailwindcss"
