@@ -14,7 +14,7 @@ export default async function authMiddleware(request: NextRequest) {
         // Get the cookie from the request
         cookie: request.headers.get("cookie") || "",
       },
-    }
+    },
   );
 
   // Get the current path
@@ -31,7 +31,7 @@ export default async function authMiddleware(request: NextRequest) {
     if (!session) {
       const callbackUrl = encodeURIComponent(path);
       return NextResponse.redirect(
-        new URL(`/auth/login?callbackUrl=${callbackUrl}`, request.nextUrl)
+        new URL(`/auth/login?callbackUrl=${callbackUrl}`, request.nextUrl),
       );
     }
     // If protectedRoute and user is authenticated, give access
@@ -42,7 +42,7 @@ export default async function authMiddleware(request: NextRequest) {
     // If auth route and user is authenticated redirect user to dashboard.
     if (session) {
       return NextResponse.redirect(
-        new URL(DEFAULT_LOGIN_REDIRECT, request.nextUrl)
+        new URL(DEFAULT_LOGIN_REDIRECT, request.nextUrl),
       );
     }
     // If authRoute and not authenticated, allow access
