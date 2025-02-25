@@ -1,6 +1,6 @@
 import LoginForm from "@features/authentication/components/login-form";
 
-const RegisterPage = () => {
+const LoginPage = () => {
   return (
     <div className="flex h-screen items-center justify-center">
       <LoginForm className="w-1/5" />
@@ -8,4 +8,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;
