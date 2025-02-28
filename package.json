@@ -17,7 +17,7 @@
     "format": "prettier --write .",
     "prepare": "husky",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
-    "clear": "git clean -xdf node_modules",
+    "clear": "git clean -xdf node_modules .next",
     "bump-deps": "bunx npm-check-updates -i",
     "bump-ui": "bunx shadcn@canary add --all --overwrite"
   },

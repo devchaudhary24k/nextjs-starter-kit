@@ -2,8 +2,10 @@ import LoginForm from "@features/authentication/components/login-form";
 
 const LoginPage = () => {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <LoginForm className="w-1/5" />
+    <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
+      <div className="w-full max-w-sm md:max-w-3xl">
+        <LoginForm />
+      </div>
     </div>
   );
 };

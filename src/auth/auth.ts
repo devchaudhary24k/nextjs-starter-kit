@@ -1,5 +1,6 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { nextCookies } from "better-auth/next-js";
 
 import { db } from "@/database";
 import * as schema from "@/database/schema";
@@ -26,15 +27,15 @@ export const auth = betterAuth({
     storage: "memory", // "memory" | "redis"
   },
 
-  session: {
-    expiresIn: 60 * 60 * 60 * 24 * 7, // 7 days
-    updateAge: 60 * 60 * 60 * 24, // 1 day ( every 1 day the session expiresAt will be updated )
-
-    cookieCache: {
-      enabled: true,
-      expiresIn: 5 * 60, // 5 minutes
-    },
-  },
+  // session: {
+  //   expiresIn: 60 * 60 * 60 * 24 * 7, // 7 days
+  //   updateAge: 60 * 60 * 60 * 24, // 1 day ( every 1 day the session expiresAt will be updated )
+  //
+  //   cookieCache: {
+  //     enabled: true,
+  //     expiresIn: 5 * 60, // 5 minutes
+  //   },
+  // },
 
   emailVerification: {
     sendOnSignUp: false,
@@ -42,5 +43,5 @@ export const auth = betterAuth({
     // TODO: Implement Email Verification Mail Here
   },
 
-  plugins: [],
+  plugins: [nextCookies()],
 });
