@@ -1,6 +1,5 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 
 import { OnboardingSchema } from "@features/authentication/validators/auth-schema";
@@ -27,8 +26,6 @@ export const onboarding = async (values: TypeOf<typeof OnboardingSchema>) => {
         slug: organizationSlug,
       },
     });
-
-    revalidatePath("/");
 
     return {
       organization: organization,
