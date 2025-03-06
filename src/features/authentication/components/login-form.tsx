@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import type { HTMLAttributes } from "react";
 
 import { Button } from "@components/ui/button";
@@ -29,7 +29,10 @@ import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 type LoginFormProps = {} & HTMLAttributes<HTMLFormElement>;
 
 const LoginForm = ({ className, ...props }: LoginFormProps) => {
+  const searchParams = useSearchParams();
   const router = useRouter();
+
+  const callbackURL = searchParams.get("callbackUrl");
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -49,7 +52,7 @@ const LoginForm = ({ className, ...props }: LoginFormProps) => {
 
         if (response?.user) {
           form.reset();
-          router.push(DEFAULT_LOGIN_REDIRECT);
+          router.push(callbackURL || DEFAULT_LOGIN_REDIRECT);
         }
       })
       .catch(() => {

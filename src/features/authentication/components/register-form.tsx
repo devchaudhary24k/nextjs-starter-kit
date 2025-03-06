@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import type { HTMLAttributes } from "react";
 
 import { Button } from "@components/ui/button";
@@ -24,13 +23,10 @@ import { toast } from "sonner";
 import type { z } from "zod";
 
 import { cn } from "@/lib/utils";
-import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 type RegisterFormProps = {} & HTMLAttributes<HTMLFormElement>;
 
 const RegisterForm = ({ className, ...props }: RegisterFormProps) => {
-  const router = useRouter();
-
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -50,7 +46,9 @@ const RegisterForm = ({ className, ...props }: RegisterFormProps) => {
 
         if (response?.user) {
           form.reset();
-          router.push(DEFAULT_LOGIN_REDIRECT);
+          toast.success(
+            "Please check your inbox, we've sent you a verification email",
+          );
         }
       })
       .catch(() => {

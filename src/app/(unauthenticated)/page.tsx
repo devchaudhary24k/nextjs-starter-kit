@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,10 +25,9 @@ export default function Home() {
         </ol>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row">
-          <a
+          <Link
             className="bg-foreground text-background flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent px-4 text-sm transition-colors hover:bg-[#383838] sm:h-12 sm:px-5 sm:text-base dark:hover:bg-[#ccc]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
+            href="/auth/login"
             rel="noopener noreferrer"
           >
             <Image
@@ -37,20 +37,19 @@ export default function Home() {
               width={20}
               height={20}
             />
-            Deploy now
-          </a>
-          <a
+            Login
+          </Link>
+          <Link
             className="flex h-10 items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm transition-colors hover:border-transparent hover:bg-[#f2f2f2] sm:h-12 sm:min-w-44 sm:px-5 sm:text-base dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
+            href="/dashboard"
             rel="noopener noreferrer"
           >
-            Read our docs
-          </a>
+            Dashboard
+          </Link>
         </div>
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        <a
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
@@ -64,7 +63,7 @@ export default function Home() {
             height={16}
           />
           Learn
-        </a>
+        </Link>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"

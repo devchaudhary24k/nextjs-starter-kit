@@ -34,3 +34,12 @@ export const EmailSchema = z.object({
     message: "Invalid email address",
   }),
 });
+
+export const OnboardingSchema = z.object({
+  organizationName: z.string().trim().min(3),
+  organizationSlug: z
+    .string()
+    .trim()
+    .min(3)
+    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+});
