@@ -42,7 +42,7 @@ export const auth = betterAuth({
   },
 
   rateLimit: {
-    enabled: false,
+    enabled: true,
     window: 10, // Time window in seconds
     max: 100, // Max Requests in a window
     storage: "memory", // "memory" | "redis"
@@ -65,7 +65,7 @@ export const auth = betterAuth({
           return {
             data: {
               ...session,
-              activeOrganizationId: organizationId,
+              activeOrganizationId: organizationId.organizationId,
             },
           };
         },
@@ -78,7 +78,7 @@ export const auth = betterAuth({
     updateAge: 60 * 60 * 24, // 1 day ( every 1 day the session expiresAt will be updated )
 
     cookieCache: {
-      enabled: false,
+      enabled: true,
       maxAge: 5 * 60, // 5 minutes
     },
   },

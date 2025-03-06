@@ -1,5 +1,7 @@
 "use server";
 
+import { headers } from "next/headers";
+
 import { RegisterSchema } from "@features/authentication/validators/auth-schema";
 import { APIError } from "better-auth/api";
 import type { TypeOf } from "zod";
@@ -7,6 +9,7 @@ import type { TypeOf } from "zod";
 import { auth } from "@/auth/auth";
 
 export const register = async (values: TypeOf<typeof RegisterSchema>) => {
+  const h = await headers();
   const validatedFields = RegisterSchema.safeParse(values);
   if (!validatedFields.success) {
     return { error: "Invalid Fields" };
@@ -16,6 +19,7 @@ export const register = async (values: TypeOf<typeof RegisterSchema>) => {
 
   try {
     const user = await auth.api.signUpEmail({
+      headers: h,
       body: {
         name,
         email,
