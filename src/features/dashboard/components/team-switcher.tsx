@@ -34,9 +34,9 @@ type TeamSwitcherProps = {
 
 export function TeamSwitcher({ teams, currentActiveTeam }: TeamSwitcherProps) {
   const { isMobile } = useSidebar();
-  const [activeTeam, setActiveTeam] = useState<Organization | null>(
-    currentActiveTeam,
-  );
+  const [activeTeam, setActiveTeam] = useState<
+    Organization | ActiveOrganization | null
+  >(currentActiveTeam);
 
   if (!activeTeam) return null;
 
