@@ -1,7 +1,7 @@
 services:
   db:
-    image: postgres:16.4
-    container_name: postgres-db
+    image: postgres:alpine
+    container_name: postgres_db
     restart: always
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
@@ -10,4 +10,7 @@ services:
     ports:
       - ${POSTGRES_PORT}:5432
     volumes:
-      - ./docker-data/db:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
