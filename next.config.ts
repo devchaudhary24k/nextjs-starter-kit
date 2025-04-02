@@ -3,7 +3,9 @@ import type { NextConfig } from "next";
 import "@/env";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  devIndicators: {
+    position: "bottom-right"
+  }
 };
 
 export default nextConfig;

@@ -2,12 +2,6 @@ import { cookies, headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import type { ReactNode } from "react";
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbList,
-  BreadcrumbPage,
-} from "@components/ui/breadcrumb";
 import { Separator } from "@components/ui/separator";
 import {
   SidebarInset,
@@ -17,6 +11,7 @@ import {
 import { AppSidebar } from "@features/dashboard/components/app-sidebar";
 
 import { auth } from "@/auth/auth";
+import Breadcrumb from "@/components/breadcrumb/breadcrumb";
 
 type DashboardLayoutProps = {
   children: ReactNode;
@@ -60,13 +55,7 @@ const DashboardLayout = async ({ children }: DashboardLayoutProps) => {
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Dashboard</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+            <Breadcrumb />
           </div>
         </header>
         <main>{children}</main>
