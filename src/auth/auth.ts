@@ -6,6 +6,7 @@ import { organization } from "better-auth/plugins";
 import { db } from "@/database";
 import * as schema from "@/database/schema";
 import { getActiveOrganization } from "@/hooks/get-active-session";
+import redis from "@/lib/redis";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -14,6 +15,20 @@ export const auth = betterAuth({
       ...schema,
     },
   }),
+
+  secondaryStorage: {
+    get: async (key) => {
+      const value = await redis.get(key);
+      return value ? value : null;
+    },
+    set: async (key, value, ttl) => {
+      if (ttl) await redis.set(key, value, "EX", ttl);
+      else await redis.set(key, value);
+    },
+    delete: async (key) => {
+      await redis.del(key);
+    },
+  },
 
   emailAndPassword: {
     enabled: true,
@@ -45,7 +60,7 @@ export const auth = betterAuth({
     enabled: true,
     window: 10, // Time window in seconds
     max: 100, // Max Requests in a window
-    storage: "memory", // "memory" | "redis"
+    storage: "secondary-storage", // "memory" | "redis"
   },
 
   databaseHooks: {

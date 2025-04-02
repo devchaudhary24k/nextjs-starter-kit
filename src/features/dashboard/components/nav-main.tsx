@@ -27,8 +27,6 @@ export function NavMain({ items }: NavMainProps) {
     };
   });
 
-  console.log(SidebarItems);
-
   return (
     <SidebarMenu>
       {SidebarItems.map((item) => (
