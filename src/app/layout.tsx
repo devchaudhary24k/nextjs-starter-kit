@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { Toaster } from "@components/ui/sonner";
 
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
@@ -19,9 +20,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Starter Template",
+  title: "%s | ${siteConfig.name}",
   description:
-    "A starter template for Next.js projects. This template includes literal everything you'll need to make a full stack application.",
+    "Starter kit for Next.js with authentication and dashboard management",
+  applicationName: siteConfig.name,
+  authors: [{ name: "Dev Talan", url: "https://devtalan.com" }],
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  category: "Starter Kit",
+  creator: "Dev Talan",
+  keywords: ["Starter Kit", "Next.js"],
+  manifest: "",
 };
 
 export default function RootLayout({

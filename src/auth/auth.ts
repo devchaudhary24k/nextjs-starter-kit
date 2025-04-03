@@ -3,12 +3,14 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
 import { organization } from "better-auth/plugins";
 
+import { siteConfig } from "@/config/site";
 import { db } from "@/database";
 import * as schema from "@/database/schema";
 import { getActiveOrganization } from "@/hooks/get-active-session";
 import redis from "@/lib/redis";
 
 export const auth = betterAuth({
+  appName: siteConfig.name,
   database: drizzleAdapter(db, {
     provider: "pg",
     schema: {
@@ -91,11 +93,16 @@ export const auth = betterAuth({
   session: {
     expiresIn: 60 * 60 * 24 * 7, // 1 week,
     updateAge: 60 * 60 * 24, // 1 day ( every 1 day the session expiresAt will be updated )
+    freshAge: 60 * 5, // 5 minutes ( the session is fresh if created within last 5 minutes )
 
     cookieCache: {
-      enabled: false,
+      enabled: true,
       maxAge: 5 * 60, // 5 minutes
     },
+  },
+
+  advanced: {
+    cookiePrefix: "NXTSKT",
   },
 
   plugins: [organization(), nextCookies()],

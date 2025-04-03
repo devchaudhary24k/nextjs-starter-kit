@@ -7,3 +7,10 @@ export type SidebarItem = {
 };
 
 export type SidebarConfig = SidebarItem[];
+
+export type SiteConfig = {
+  name: string;
+  description: string;
+  short_name: string;
+  url: string;
+};

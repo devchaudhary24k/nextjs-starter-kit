@@ -4,8 +4,8 @@ import "@/env";
 
 const nextConfig: NextConfig = {
   devIndicators: {
-    position: "bottom-right"
-  }
+    position: "bottom-right",
+  },
 };
 
 export default nextConfig;
