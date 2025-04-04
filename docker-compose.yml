@@ -28,7 +28,7 @@ services:
       - 5540:5540
     restart: always
     volumes:
-      - redisinsight_data:/db
+      - redisinsight_data:/data
     depends_on:
       - redis
 
