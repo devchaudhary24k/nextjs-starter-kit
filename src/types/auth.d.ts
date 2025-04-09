@@ -1,6 +1,6 @@
 import type { auth } from "@/auth/auth";
 
-export type Session = typeof auth.$Infer.Session;
+export type Session = typeof auth.$Infer.Session.session;
 export type ActiveOrganization = typeof auth.$Infer.ActiveOrganization;
 export type Invitation = typeof auth.$Infer.Invitation;
 export type Organization = typeof auth.$Infer.Organization;

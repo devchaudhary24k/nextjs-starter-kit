@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import type { z } from "zod";
 
+import { authClient } from "@/auth/auth-client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -41,7 +42,7 @@ const OnboardingForm = ({ className, ...props }: OnboardingFormProps) => {
   });
 
   const onSubmit = async (values: z.infer<typeof OnboardingSchema>) => {
-    await onboarding(values).then((response) => {
+    await onboarding(values).then(async (response) => {
       if (response?.error) {
         form.reset();
         toast.error(response.error);
@@ -49,6 +50,11 @@ const OnboardingForm = ({ className, ...props }: OnboardingFormProps) => {
 
       if (response?.organization) {
         form.reset();
+
+        await authClient.organization.setActive({
+          organizationId: response.organization.id,
+        });
+
         toast.success(response.success);
         router.push("/dashboard");
       }
