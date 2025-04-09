@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import type { ReactNode } from "react";
@@ -12,6 +13,10 @@ import { AppSidebar } from "@features/dashboard/components/app-sidebar";
 
 import { auth } from "@/auth/auth";
 import Breadcrumb from "@/components/breadcrumb/breadcrumb";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 type DashboardLayoutProps = {
   children: ReactNode;

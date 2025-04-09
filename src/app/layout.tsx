@@ -20,7 +20,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "%s | ${siteConfig.name}",
+  title: {
+    default: `${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
+  },
   description:
     "Starter kit for Next.js with authentication and dashboard management",
   applicationName: siteConfig.name,
