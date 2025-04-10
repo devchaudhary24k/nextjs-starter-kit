@@ -13,14 +13,13 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { sidebarConfig } from "@/config/sidebar";
-import type { ActiveOrganization, OrganizationList, User } from "@/types/auth";
+import { getSidebarConfig } from "@/config/sidebar";
+import type { Organization, OrganizationList, User } from "@/types/auth";
 
-// TODO: Add proper types here
 type AppSidebarProps = {
   user: User;
   organizationList: OrganizationList;
-  activeOrganization: ActiveOrganization;
+  activeOrganization: Organization;
 } & React.ComponentProps<typeof Sidebar>;
 
 export function AppSidebar({
@@ -36,7 +35,7 @@ export function AppSidebar({
           teams={organizationList}
           currentActiveTeam={activeOrganization}
         />
-        <NavMain items={sidebarConfig} />
+        <NavMain items={getSidebarConfig(activeOrganization.slug)} />
       </SidebarHeader>
       <SidebarContent></SidebarContent>
       <SidebarFooter>

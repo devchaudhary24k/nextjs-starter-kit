@@ -20,7 +20,11 @@ export default async function authMiddleware(request: NextRequest) {
   // Get the current path
   const path = request.nextUrl.pathname;
 
-  const isProtectedRoute = protectedRoutes.includes(request.nextUrl.pathname);
+  const isProtectedRoute = protectedRoutes.some(
+    (route) =>
+      request.nextUrl.pathname === route ||
+      request.nextUrl.pathname.startsWith(`${route}/`),
+  );
   const isAuthRoute = authRoutes.includes(request.nextUrl.pathname);
 
   /**

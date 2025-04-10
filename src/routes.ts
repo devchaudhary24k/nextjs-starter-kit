@@ -13,8 +13,8 @@ export const authRoutes = [
 ];
 
 /**
- * An array of routes that are protected and require authentication.
- * These routes will redirect users to the login page if they are not authenticated.
+ * An array of route prefixes that are protected and require authentication.
+ * These routes and all their sub-routes will redirect users to the login page if they are not authenticated.
  * @type {string[]}
  */
 export const protectedRoutes = ["/dashboard", "/onboarding"];

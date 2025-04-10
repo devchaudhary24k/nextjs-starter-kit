@@ -1,9 +1,9 @@
-import type { ReactElement } from "react";
+import type { ReactNode } from "react";
 
 export type SidebarItem = {
   name: string;
   url: string;
-  icon: ReactElement;
+  icon: ReactNode;
 };
 
 export type SidebarConfig = SidebarItem[];
