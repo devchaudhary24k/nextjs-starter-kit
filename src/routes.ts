@@ -17,7 +17,7 @@ export const authRoutes = [
  * These routes and all their sub-routes will redirect users to the login page if they are not authenticated.
  * @type {string[]}
  */
-export const protectedRoutes = ["/dashboard", "/onboarding"];
+export const protectedRoutes = ["/dashboard", "/onboarding", "/account"];
 
 /**
  * The default redirect path after logging in.
