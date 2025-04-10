@@ -117,9 +117,9 @@ const OnboardingForm = ({ className, ...props }: OnboardingFormProps) => {
                         </FormLabel>
                         <FormControl>
                           <div className="flex items-center">
-                            {/*<div className="bg-muted text-muted-foreground flex h-11 items-center rounded-l-md border border-r-0 px-3 text-sm">*/}
-                            {/*  app.example.com/*/}
-                            {/*</div>*/}
+                            <div className="bg-muted text-muted-foreground flex h-11 items-center rounded-l-md border border-r-0 px-3 text-sm">
+                              nsk.com/dashboard/
+                            </div>
                             <Input
                               {...field}
                               placeholder="acme"

@@ -46,12 +46,10 @@ const DashboardLayout = async ({ children }: DashboardLayoutProps) => {
     redirect("/onboarding");
   }
 
-  const user = session.user;
-
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar
-        user={user}
+        user={session.user}
         organizationList={organizationList}
         activeOrganization={activeOrganization!}
       />
