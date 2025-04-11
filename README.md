@@ -11,6 +11,13 @@
 - [x] Authentication ( Better Auth )
 - [x] Middleware
 - [x] Bulletproof React
+- [ ] Implement user profile settings page
+- [ ] Implement user security settings page
+- [ ] Implement user notification settings page
+- [ ] Implement user connections settings page
+- [ ] Implement dashboard page
+- [ ] Implement dashboard settings page
+- [ ] Implement Testing Library
 - [ ] Implement Password Reset
 - [ ] Add verify email page
 - [ ] Implement Forgot Password
@@ -27,6 +34,13 @@
 - [ ] Implement SSO
 - [ ] Implement OpenAPI
 - [ ] Implement Stripe
+- [ ] Implement Sentry for Observability
+- [ ] Implement Logtail for logging
+- [ ] Implement Posthog for Analytics
+- [ ] Implement Upstash for ratelimiting
+- [ ] Implement Arcjet for security
+- [ ] Implement CMS
+- [ ] Implement Internationalization
 
 
 ### ISSUES
