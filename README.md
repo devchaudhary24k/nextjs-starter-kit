@@ -14,4 +14,3 @@
 - [ ] Implement Password Reset
 - [ ] Add verify email page
 - [ ] Implement Forgot Password
-- [ ] 
