@@ -7,9 +7,9 @@ import type { User } from "better-auth";
 import {
   BadgeCheck,
   Bell,
-  ChevronsUpDown,
   CreditCard,
   LogOut,
+  MoreVerticalIcon,
   Sparkles,
 } from "lucide-react";
 
@@ -66,7 +66,7 @@ export function NavUser({ user }: NavUserProps) {
                 <span className="truncate font-semibold">{user.name}</span>
                 <span className="truncate text-xs">{user.email}</span>
               </div>
-              <ChevronsUpDown className="ml-auto size-4" />
+              <MoreVerticalIcon className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent

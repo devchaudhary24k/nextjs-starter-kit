@@ -13,7 +13,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { getSidebarConfig } from "@/config/sidebar";
+import { getDashboardSidebarConfig } from "@/config/sidebar";
 import type { Organization, OrganizationList, User } from "@/types/auth";
 
 type AppSidebarProps = {
@@ -29,15 +29,16 @@ export function AppSidebar({
   ...props
 }: AppSidebarProps) {
   return (
-    <Sidebar variant="inset" collapsible="icon" {...props}>
+    <Sidebar variant="inset" collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <TeamSwitcher
           teams={organizationList}
           currentActiveTeam={activeOrganization}
         />
-        <NavMain items={getSidebarConfig(activeOrganization.slug)} />
       </SidebarHeader>
-      <SidebarContent></SidebarContent>
+      <SidebarContent>
+        <NavMain items={getDashboardSidebarConfig(activeOrganization.slug)} />
+      </SidebarContent>
       <SidebarFooter>
         <NavUser user={user} />
       </SidebarFooter>

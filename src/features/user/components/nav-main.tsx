@@ -15,7 +15,7 @@ type NavMainProps = {
   items: SidebarConfig;
 };
 
-export function NavMain({ items }: NavMainProps) {
+const NavMain = ({ items }: NavMainProps) => {
   const pathname = usePathname();
 
   const SidebarItems = items.map((item) => {
@@ -47,4 +47,6 @@ export function NavMain({ items }: NavMainProps) {
       </SidebarGroupContent>
     </SidebarGroup>
   );
-}
+};
+
+export default NavMain;
