@@ -35,7 +35,7 @@
   - [x] `/dashboard`  
   - [x] `/accounts` (with subpage scaffolds)  
   - [x] `/onboarding`  
-- [ ] Implement OpenAPI  
+- [x] Implement OpenAPI  
 - [ ] Implement User Profile Settings Page  
 - [ ] Implement User Security Settings Page  
 - [ ] Implement User Connections Settings Page  

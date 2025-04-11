@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
-import { organization } from "better-auth/plugins";
+import { openAPI, organization } from "better-auth/plugins";
 
 import { siteConfig } from "@/config/site";
 import { db } from "@/database";
@@ -79,5 +79,9 @@ export const auth = betterAuth({
     cookiePrefix: "NXTSKT",
   },
 
-  plugins: [organization(), nextCookies()],
+  plugins: [
+    organization(),
+    openAPI(),
+    nextCookies(), // This should be last plugin in the array
+  ],
 });
