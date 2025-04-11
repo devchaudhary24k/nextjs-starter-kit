@@ -11,8 +11,7 @@
 - [x] Authentication ( Better Auth )
 - [x] Middleware
 - [x] Bulletproof React
-- [ ] Remove Onboarding
-- [ ] Create one organization on signup or email verification
 - [ ] Implement Password Reset
 - [ ] Add verify email page
 - [ ] Implement Forgot Password
+- [ ] 

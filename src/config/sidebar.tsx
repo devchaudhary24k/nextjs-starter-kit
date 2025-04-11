@@ -8,11 +8,6 @@ export const getSidebarConfig = (slug: string): SidebarConfig => [
     icon: <Icons.home />,
   },
   {
-    name: "Account",
-    url: `/dashboard/${slug}/account`,
-    icon: <Icons.user />,
-  },
-  {
     name: "Settings",
     url: `/dashboard/${slug}/settings`,
     icon: <Icons.settings />,
