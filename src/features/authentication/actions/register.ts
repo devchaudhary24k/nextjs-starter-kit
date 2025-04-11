@@ -17,6 +17,8 @@ export const register = async (values: TypeOf<typeof RegisterSchema>) => {
 
   const { password, email, name } = validatedFields.data;
 
+  const defaultAvatar = `https://api.dicebear.com/8.x/thumbs/svg?seed=${encodeURIComponent(name)}`;
+
   try {
     const user = await auth.api.signUpEmail({
       headers: h,
@@ -24,6 +26,7 @@ export const register = async (values: TypeOf<typeof RegisterSchema>) => {
         name,
         email,
         password,
+        image: defaultAvatar,
       },
     });
 
