@@ -6,7 +6,6 @@ import { organization } from "better-auth/plugins";
 import { siteConfig } from "@/config/site";
 import { db } from "@/database";
 import * as schema from "@/database/schema";
-import { getActiveOrganization } from "@/hooks/get-active-session";
 import redis from "@/lib/redis";
 
 export const auth = betterAuth({
@@ -63,31 +62,6 @@ export const auth = betterAuth({
     window: 10, // Time window in seconds
     max: 100, // Max Requests in a window
     storage: "secondary-storage", // "memory" | "redis"
-  },
-
-  databaseHooks: {
-    session: {
-      create: {
-        before: async (session) => {
-          const organizationId = await getActiveOrganization(session.userId);
-
-          if (!organizationId) {
-            return {
-              data: {
-                ...session,
-              },
-            };
-          }
-
-          return {
-            data: {
-              ...session,
-              activeOrganizationId: organizationId.organizationId,
-            },
-          };
-        },
-      },
-    },
   },
 
   session: {

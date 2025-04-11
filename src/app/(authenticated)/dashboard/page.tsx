@@ -1,25 +1,20 @@
-"use client";
+import { headers } from "next/headers";
+import { notFound, redirect } from "next/navigation";
 
-// import { headers } from "next/headers";
+import { auth } from "@/auth/auth";
 
-// import { auth } from "@/auth/auth";
+const DashboardPage = async () => {
+  const h = await headers();
 
-const DashboardPage = () => {
-  // const session = await auth.api.getSession({
-  //   headers: await headers(),
-  // });
+  const session = await auth.api.getSession({ headers: h });
+  if (!session) return notFound();
 
-  // const user = session?.user;
-  // const { data: activeOrganization } = authClient.useActiveOrganization();
+  const organizations = await auth.api.listOrganizations({ headers: h });
+  if (!organizations.length) redirect("/onboarding");
 
-  return (
-    <div>
-      <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        {/*<div>{JSON.stringify(user)}</div>*/}
-        {/*<div>{JSON.stringify(activeOrganization)}</div>*/}
-      </div>
-    </div>
-  );
+  const firstOrg = organizations[0];
+
+  redirect(`/dashboard/${firstOrg.slug}`);
 };
 
 export default DashboardPage;
