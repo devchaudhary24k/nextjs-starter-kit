@@ -1,47 +1,70 @@
 ### TODO
+- [x] Add Icon Library  
+- [x] Add Theme (via ThemeProvider)  
+- [x] Typesafe Env  
+- [x] Process.env Linter Rule  
+- [x] Database  
+- [x] Drizzle  
+- [x] Docker  
+- [x] Docker/Postgres  
+- [x] Authentication (Better Auth)  
+  - [x] Email & Password Sign Up  
+  - [x] Email Verification  
+  - [x] Sessions with Cookie Caching  
+  - [x] Cookie Prefix  
+  - [x] Auth Rate Limiting  
+  - [x] Redis Caching for Auth  
+- [x] Redis Integration  
+- [x] Resend Integration for Emails  
+- [x] Middleware  
+- [x] Bulletproof React Structure  
+- [x] Implemented SEO Setup  
+  - [x] Manifest  
+  - [x] `robots.ts`  
+  - [x] `sitemap.ts`  
+- [x] Husky  
+- [x] Commitlint  
+- [x] Lint-Staged  
+- [x] UI via ShadCN  
+- [x] Sidebar Config (Dashboard & Account)  
+- [x] Core Features Setup:  
+  - [x] Authentication  
+  - [x] Dashboard  
+  - [x] User  
+- [x] Implemented pages scaffold (UI pending):  
+  - [x] `/dashboard`  
+  - [x] `/accounts` (with subpage scaffolds)  
+  - [x] `/onboarding`  
+- [ ] Implement OpenAPI  
+- [ ] Implement User Profile Settings Page  
+- [ ] Implement User Security Settings Page  
+- [ ] Implement User Connections Settings Page  
+- [ ] Implement Testing Library  
+- [ ] Implement Password Reset  
+- [ ] Add Verify Email Page  
+- [ ] Implement Forgot Password  
+- [ ] Implement File Upload  
+- [ ] Enable Users to Add Profile Picture  
+- [ ] Enable Users to Add Organization Images  
+- [ ] Set Who Can Change Organization Settings  
+- [ ] Implement Two-Factor Authentication  
+- [ ] Implement Passkeys  
+- [ ] Implement OAuth  
+- [ ] Implement Google OneTap  
+- [ ] Implement Admin Control  
+- [ ] Implement OIDC Provider  
+- [ ] Implement SSO  
+- [ ] Implement Stripe (Billing Integration)  
+- [ ] Implement Sentry for Observability  
+- [ ] Implement Logtail for Logging  
+- [ ] Implement PostHog for Analytics  
+- [ ] Implement Upstash for Rate Limiting (Beyond Auth)  
+- [ ] Implement Arcjet for Security  
+- [ ] Implement CMS  
+- [ ] Implement Internationalization (i18n)  
+- [ ] Update SEO Pages Regularly (Manifest, Sitemap, Robots)  
 
-- [x] Add Icon Library
-- [x] Add Theme
-- [x] Typesafe Env
-- [x] Process.env Linter Rule
-- [x] Database
-- [x] Drizzle
-- [x] Docker
-- [x] Docker/Postgres
-- [x] Authentication ( Better Auth )
-- [x] Middleware
-- [x] Bulletproof React
-- [ ] Implement user profile settings page
-- [ ] Implement user security settings page
-- [ ] Implement user notification settings page
-- [ ] Implement user connections settings page
-- [ ] Implement dashboard page
-- [ ] Implement dashboard settings page
-- [ ] Implement Testing Library
-- [ ] Implement Password Reset
-- [ ] Add verify email page
-- [ ] Implement Forgot Password
-- [ ] Implement file upload
-- [ ] Implement users to add profile picture 
-- [ ] Implement users to add organization images
-- [ ] Set who can changes organization settings
-- [ ] Implement two factor authentication
-- [ ] Implement Passkeys
-- [ ] Implement OAuth
-- [ ] Implement Onetap
-- [ ] Implement Admin Control
-- [ ] Implement OIDC Provider
-- [ ] Implement SSO
-- [ ] Implement OpenAPI
-- [ ] Implement Stripe
-- [ ] Implement Sentry for Observability
-- [ ] Implement Logtail for logging
-- [ ] Implement Posthog for Analytics
-- [ ] Implement Upstash for ratelimiting
-- [ ] Implement Arcjet for security
-- [ ] Implement CMS
-- [ ] Implement Internationalization
-
+---
 
 ### ISSUES
 - [ ] When database is erased and session is cached in client device, it will send user to onboarding page and let them create as many ghost orgs they want
