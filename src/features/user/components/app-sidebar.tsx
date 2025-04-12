@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 
+import { Icons } from "@components/icons/icons";
+
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -27,7 +31,7 @@ const AppSidebar = ({ ...props }: AppSidebarProps) => {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <Link href="/dashboard">
+              <Link href="/account">
                 <span className="text-lg font-medium">Account Settings</span>
               </Link>
             </SidebarMenuButton>
@@ -37,7 +41,22 @@ const AppSidebar = ({ ...props }: AppSidebarProps) => {
       <SidebarContent>
         <NavMain items={accountSidebarConfig} />
       </SidebarContent>
-      <SidebarFooter></SidebarFooter>
+      <SidebarFooter>
+        <SidebarGroup>
+          <SidebarGroupContent className="flex flex-col gap-2">
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href={"/dashboard"}>
+                    <Icons.arrowLeft />
+                    <span>Go To Dashboard</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );

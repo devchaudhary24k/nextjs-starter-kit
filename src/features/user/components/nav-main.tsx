@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import {
@@ -36,10 +37,10 @@ const NavMain = ({ items }: NavMainProps) => {
           {SidebarItems.map((item) => (
             <SidebarMenuItem key={item.name}>
               <SidebarMenuButton asChild isActive={item.isActive}>
-                <a href={item.url}>
+                <Link href={item.url}>
                   {item.icon}
                   <span>{item.name}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

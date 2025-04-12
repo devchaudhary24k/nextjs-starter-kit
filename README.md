@@ -37,7 +37,7 @@
   - [x] `/onboarding`  
 - [x] Implement OpenAPI  
 - [x] Implement Testing Library  
-- [ ] Fix page titles
+- [x] Implement page titles
 - [ ] Implement User Profile Settings Page  
 - [ ] Implement User Security Settings Page  
 - [ ] Implement User Connections Settings Page  

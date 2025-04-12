@@ -1,12 +1,8 @@
 import type { ReactNode } from "react";
 
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@components/ui/sidebar";
+import Header from "@components/sidebar/header";
+import { SidebarInset, SidebarProvider } from "@components/ui/sidebar";
 
-import { Separator } from "@/components/ui/separator";
 import AppSidebar from "@/features/user/components/app-sidebar";
 
 type layoutProps = {
@@ -18,16 +14,7 @@ const layout = ({ children }: layoutProps) => {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-12 shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-          <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
-            <SidebarTrigger className="-ml-1" />
-            <Separator
-              orientation="vertical"
-              className="mx-2 data-[orientation=vertical]:h-4"
-            />
-            <h1 className="text-base font-medium">Documents</h1>
-          </div>
-        </header>
+        <Header />
         <main>{children}</main>
       </SidebarInset>
     </SidebarProvider>

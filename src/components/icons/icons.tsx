@@ -2,6 +2,7 @@ import type { ComponentType } from "react";
 
 import type { LucideProps } from "lucide-react";
 import {
+  ArrowLeft,
   Bell,
   Calendar,
   Command,
@@ -27,4 +28,5 @@ export const Icons = {
   shieldUser: ShieldUser,
   bell: Bell,
   link: Link,
+  arrowLeft: ArrowLeft,
 };
