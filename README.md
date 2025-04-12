@@ -38,11 +38,10 @@
 - [x] Implement OpenAPI  
 - [x] Implement Testing Library  
 - [x] Implement page titles
+- [x] Implement Cached funtions for sessions 
 - [ ] Implement User Profile Settings Page  
 - [ ] Implement User Security Settings Page  
 - [ ] Implement User Connections Settings Page  
-- [ ] Create Context to pass sessions in layouts and reduce queires
-
 - [ ] Implement Password Reset  
 - [ ] Add Verify Email Page  
 - [ ] Implement Forgot Password  
