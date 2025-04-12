@@ -36,9 +36,11 @@
   - [x] `/accounts` (with subpage scaffolds)  
   - [x] `/onboarding`  
 - [x] Implement OpenAPI  
+- [ ] Fix page titles
 - [ ] Implement User Profile Settings Page  
 - [ ] Implement User Security Settings Page  
 - [ ] Implement User Connections Settings Page  
+- [ ] Create Context to pass sessions in layouts and reduce queires
 - [ ] Implement Testing Library  
 - [ ] Implement Password Reset  
 - [ ] Add Verify Email Page  
