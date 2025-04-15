@@ -39,8 +39,7 @@
 - [x] Implement OpenAPI
 - [x] Implement Testing Library
 - [x] Implement page titles
-- [x] Implement Cached funtions for sessions
-- [ ] Implement User Profile Settings Page
+- [x] Implement User Profile Settings Page
 - [ ] Implement User Security Settings Page
 - [ ] Implement User Connections Settings Page
 - [ ] Implement Verification when user changes email
