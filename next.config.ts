@@ -7,8 +7,15 @@ const nextConfig: NextConfig = {
     position: "bottom-right",
   },
   experimental: {
-    useCache: true
-  }
+    useCache: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "api.dicebear.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

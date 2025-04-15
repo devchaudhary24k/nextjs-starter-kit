@@ -6,12 +6,15 @@ import {
   Bell,
   Calendar,
   Command,
+  Edit,
   Home,
   Inbox,
   Link,
   Search,
   Settings,
   ShieldUser,
+  Trash2,
+  Upload,
   User,
 } from "lucide-react";
 
@@ -29,4 +32,7 @@ export const Icons = {
   bell: Bell,
   link: Link,
   arrowLeft: ArrowLeft,
+  bin: Trash2,
+  upload: Upload,
+  edit: Edit,
 };
