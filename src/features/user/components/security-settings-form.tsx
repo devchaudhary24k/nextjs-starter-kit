@@ -43,40 +43,40 @@ const SecuritySettingsForm = ({
   // ) => {
   // };
 
-  function detectOS(userAgent) {
-    userAgent = userAgent.toLowerCase();
+  // function detectOS(userAgent) {
+  //   userAgent = userAgent.toLowerCase();
 
-    const osMap = {
-      "windows nt": "Windows",
-      iphone: "iPhone/iOS",
-      ipad: "iPhone/iOS",
-      ipod: "iPhone/iOS",
-      android: "Android",
-      "mac os x": "Mac",
-      linux: "Linux",
-    };
+  //   const osMap = {
+  //     "windows nt": "Windows",
+  //     iphone: "iPhone/iOS",
+  //     ipad: "iPhone/iOS",
+  //     ipod: "iPhone/iOS",
+  //     android: "Android",
+  //     "mac os x": "Mac",
+  //     linux: "Linux",
+  //   };
 
-    const browserMap = {
-      chrome: "Chrome",
-      firefox: "Firefox",
-      safari: "Safari",
-      edg: "Edge",
-      opera: "Opera",
-    };
+  //   const browserMap = {
+  //     chrome: "Chrome",
+  //     firefox: "Firefox",
+  //     safari: "Safari",
+  //     edg: "Edge",
+  //     opera: "Opera",
+  //   };
 
-    const osMatch = Object.entries(osMap).find(([key]) =>
-      userAgent.includes(key),
-    );
-    const browserMatch = Object.entries(browserMap).find(([key]) =>
-      userAgent.includes(key),
-    );
+  //   const osMatch = Object.entries(osMap).find(([key]) =>
+  //     userAgent.includes(key),
+  //   );
+  //   const browserMatch = Object.entries(browserMap).find(([key]) =>
+  //     userAgent.includes(key),
+  //   );
 
-    return {
-      os: osMatch ? osMatch[1] : "❓ Unknown OS",
-      browser: browserMatch ? browserMatch[1] : "❓ Unknown Browser",
-      label: `${osMatch ? osMatch[1] : "❓"} | ${browserMatch ? browserMatch[1] : "❓"}`,
-    };
-  }
+  //   return {
+  //     os: osMatch ? osMatch[1] : "❓ Unknown OS",
+  //     browser: browserMatch ? browserMatch[1] : "❓ Unknown Browser",
+  //     label: `${osMatch ? osMatch[1] : "❓"} | ${browserMatch ? browserMatch[1] : "❓"}`,
+  //   };
+  // }
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -93,7 +93,7 @@ const SecuritySettingsForm = ({
         {/* Form Inputs */}
         <div className="col-span-1 md:col-span-4 lg:col-span-3">
           {sessionList.map((session, idx) => {
-            const os = detectOS(session.userAgent);
+            // const os = detectOS(session.userAgent);
 
             return (
               <div key={idx}>
@@ -114,7 +114,7 @@ const SecuritySettingsForm = ({
                     <strong>Updated At:</strong>{" "}
                     {new Date(session.updatedAt).toLocaleString()}
                   </div>
-                  {JSON.stringify(os)}
+                  {/* {JSON.stringify(os)} */}
                 </div>
               </div>
             );
