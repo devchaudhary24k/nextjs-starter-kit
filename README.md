@@ -40,9 +40,8 @@
 - [x] Implement Testing Library
 - [x] Implement page titles
 - [x] Implement User Profile Settings Page
-- [ ] Implement Verify Email Page
-- [ ] Setup API for email verification polling
-- [ ] Create default organization of
+- [x] Implement Verify Email Page
+- [x] Setup Server Action for email verification polling
 - [ ] Implement User Security Settings Page
 - [ ] Implement User Connections Settings Page
 - [ ] Implement Verification when user changes email
