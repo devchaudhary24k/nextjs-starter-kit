@@ -40,6 +40,8 @@
 - [x] Implement Testing Library
 - [x] Implement page titles
 - [x] Implement User Profile Settings Page
+- [x] Implement Verify Email Page
+- [x] Setup Server Action for email verification polling
 - [ ] Implement User Security Settings Page
 - [ ] Implement User Connections Settings Page
 - [ ] Implement Verification when user changes email
@@ -73,3 +75,14 @@
 ### ISSUES
 
 - [ ] When database is erased and session is cached in client device, it will send user to onboarding page and let them create as many ghost orgs they want
+
+---
+
+### IMPROVEMENTS
+
+- [ ] Animate verify email page icon
+- [ ] Create a global theme for both light and dark mode
+- [ ] Add proper documentation of how to add or remove features
+- [ ] Add comments in every file for every function and every call
+- [ ] Minimize Database requests and session request as low as possible
+- [ ] Also add documentation on how to remove a certain feature from the app

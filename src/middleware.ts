@@ -56,6 +56,7 @@ export default async function authMiddleware(request: NextRequest) {
   return NextResponse.next();
 }
 
+// TODO: Change Matcher to only target required pages to aviod unwanted middleware innvocation.
 export const config = {
   matcher: [
     // Match all request paths except for:

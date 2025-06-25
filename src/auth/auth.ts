@@ -41,9 +41,9 @@ export const auth = betterAuth({
   emailVerification: {
     sendOnSignUp: true,
     autoSignInAfterVerification: true,
-    expiresIn: 60 * 60 * 24, // 24 hours
+    expiresIn: 60 * 60, // 1 hour
     sendVerificationEmail: async ({ user, token }) => {
-      const callbackURL = "/onboarding";
+      const callbackURL = "/auth/email-verified";
       const url = `http://localhost:3000/api/auth/verify-email?token=${token}&callbackURL=${callbackURL}`;
       console.log(url, user.email);
 
