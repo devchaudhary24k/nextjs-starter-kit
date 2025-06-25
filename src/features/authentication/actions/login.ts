@@ -30,7 +30,7 @@ export const login = async (values: TypeOf<typeof LoginSchema>) => {
     return { user: user, success: "Authenticated" };
   } catch (err) {
     if (err instanceof APIError) {
-      return { error: err.message, status: err.status };
+      return { error: err.message, statusCode: err.statusCode };
     }
   }
 };

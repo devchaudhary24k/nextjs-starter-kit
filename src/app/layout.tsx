@@ -51,7 +51,7 @@ export default function RootLayout({
         <Script src="https://unpkg.com/react-scan/dist/auto.global.js" />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

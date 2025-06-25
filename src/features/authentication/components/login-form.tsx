@@ -47,10 +47,16 @@ const LoginForm = ({ className, ...props }: LoginFormProps) => {
       .then((response) => {
         if (response?.error) {
           form.reset();
-          toast.error(response.error);
+          if (response.statusCode !== 403) {
+            toast.error(response.error);
+          } else {
+            toast.error("Email not verified.", {
+              description: "Please check your mail for verification mail.",
+            });
+          }
         }
 
-        if (response?.user) {
+        if (response?.success) {
           form.reset();
           router.push(callbackURL || DEFAULT_LOGIN_REDIRECT);
         }

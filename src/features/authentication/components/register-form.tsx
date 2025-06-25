@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { HTMLAttributes } from "react";
 
 import { Button } from "@components/ui/button";
@@ -27,6 +28,7 @@ import { cn } from "@/lib/utils";
 type RegisterFormProps = {} & HTMLAttributes<HTMLFormElement>;
 
 const RegisterForm = ({ className, ...props }: RegisterFormProps) => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -45,9 +47,8 @@ const RegisterForm = ({ className, ...props }: RegisterFormProps) => {
         }
 
         if (response?.user) {
-          form.reset();
-          toast.success(
-            "Please check your inbox, we've sent you a verification email",
+          router.push(
+            `/auth/verify-email?id=${response.user.user.id}&email=${response.user.user.email}`,
           );
         }
       })

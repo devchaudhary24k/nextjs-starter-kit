@@ -43,3 +43,12 @@ export const OnboardingSchema = z.object({
     .min(3)
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
 });
+
+export const EmailVerificationSchema = z.object({
+  email: z.string().trim().email().min(1, {
+    message: "Email reqired",
+  }),
+  id: z.string().trim().min(1, {
+    message: "ID required",
+  }),
+});
