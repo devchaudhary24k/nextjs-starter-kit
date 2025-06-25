@@ -3,13 +3,25 @@ import { notFound } from "next/navigation";
 
 import { auth } from "@/auth/auth";
 
-type pageProps = {
+type OrganizationPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
 
-const page = async ({ params }: pageProps) => {
+/**
+ * Organization Page component.
+ *
+ * Renders the main dashboard for a specific organization, based on the provided slug.
+ * Fetches full organization details on the server. If the organization is not found,
+ * responds with a 404 page.
+ *
+ * @async
+ * @param {OrganizationPageProps} props - The props for the page component.
+ * @param {Promise<{ slug: string }>} props.params - The route parameters as a Promise containing the organization slug.
+ * @returns {Promise<JSX.Element>} The rendered Organization Dashboard page, or a 404 if not found.
+ */
+const OrganizationPage = async ({ params }: OrganizationPageProps) => {
   const { slug } = await params;
   const h = await headers();
 
@@ -32,4 +44,4 @@ const page = async ({ params }: pageProps) => {
   );
 };
 
-export default page;
+export default OrganizationPage;

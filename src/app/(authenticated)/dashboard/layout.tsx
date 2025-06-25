@@ -1,11 +1,18 @@
-import type { ReactNode } from "react";
+import type { JSX, ReactNode } from "react";
 
-type layoutProps = {
+type LayoutProps = {
   children: ReactNode;
 };
 
-const layout = ({ children }: layoutProps) => {
-  return <div>{children}</div>;
+/**
+ * Dashboard Layout component that wraps its children.
+ *
+ * @param {object} props - The layout properties.
+ * @param {ReactNode} props.children - The child components to be rendered within the layout.
+ * @returns {JSX.Element} The rendered layout with children.
+ */
+const Layout = ({ children }: LayoutProps): JSX.Element => {
+  return <>{children}</>;
 };
 
-export default layout;
+export default Layout;

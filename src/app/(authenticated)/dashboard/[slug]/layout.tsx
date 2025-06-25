@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import type { ReactNode } from "react";
+import type { JSX } from "react";
 
 import Header from "@components/sidebar/header";
 import { SidebarInset, SidebarProvider } from "@components/ui/sidebar";
@@ -23,7 +24,26 @@ type DashboardLayoutProps = {
   }>;
 };
 
-const DashboardLayout = async ({ children, params }: DashboardLayoutProps) => {
+/**
+ * Dashboard Layout Component.
+ *
+ * Server-side layout for dashboard pages. This layout is responsible for:
+ * - Fetching the current user's session. Redirects or returns 404 if unauthenticated.
+ * - Fetching the user's organizations and redirecting to onboarding if none exist.
+ * - Validating the user's membership in the organization (by slug). Shows 404 if access denied.
+ * - Reading the sidebar state from cookies to control sidebar UI.
+ * - Providing the organization/user context to sidebar and dashboard children.
+ *
+ * @async
+ * @param {DashboardLayoutProps} props - The layout props
+ * @param {ReactNode} props.children - The dashboard page content
+ * @param {Promise<{ slug: string }>} props.params - Route parameters (slug wrapped in a promise)
+ * @returns {Promise<JSX.Element>} The layout wrapping the dashboard page, with sidebar and header, or redirects/notFound as needed.
+ */
+const DashboardLayout = async ({
+  children,
+  params,
+}: DashboardLayoutProps): Promise<JSX.Element> => {
   const { slug } = await params;
   const cookieStore = await cookies();
   const h = await headers();
