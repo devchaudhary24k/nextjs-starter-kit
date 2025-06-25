@@ -19,17 +19,6 @@ services:
     volumes:
       - redis_data:/data
 
-  redisinsight:
-    image: redislabs/redisinsight:latest
-    container_name: redisinsight
-    ports:
-      - 5540:5540
-    volumes:
-      - redisinsight_data:/data
-    depends_on:
-      - redis
-
 volumes:
   postgres_data:
   redis_data:
-  redisinsight_data:
