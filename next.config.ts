@@ -3,7 +3,19 @@ import type { NextConfig } from "next";
 import "@/env";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  devIndicators: {
+    position: "bottom-right",
+  },
+  experimental: {
+    useCache: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "api.dicebear.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import type { ReactNode } from "react";
 
+import { Toaster } from "@components/ui/sonner";
+
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
@@ -17,9 +21,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Starter Template",
+  title: {
+    default: `${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
+  },
   description:
-    "A starter template for Next.js projects. This template includes literal everything you'll need to make a full stack application.",
+    "Starter kit for Next.js with authentication and dashboard management",
+  applicationName: siteConfig.name,
+  authors: [{ name: "Dev Talan", url: "https://devtalan.com" }],
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  category: "Starter Kit",
+  creator: "Dev Talan",
+  keywords: ["Starter Kit", "Next.js"],
+  manifest: "",
 };
 
 export default function RootLayout({
@@ -32,13 +48,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script src="https://unpkg.com/react-scan/dist/auto.global.js" />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           {children}
+          <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>
