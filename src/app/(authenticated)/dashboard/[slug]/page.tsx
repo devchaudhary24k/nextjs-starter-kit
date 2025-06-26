@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
+import type { JSX } from "react";
 
 import { auth } from "@/auth/auth";
 
@@ -21,7 +22,9 @@ type OrganizationPageProps = {
  * @param {Promise<{ slug: string }>} props.params - The route parameters as a Promise containing the organization slug.
  * @returns {Promise<JSX.Element>} The rendered Organization Dashboard page, or a 404 if not found.
  */
-const OrganizationPage = async ({ params }: OrganizationPageProps) => {
+const OrganizationPage = async ({
+  params,
+}: OrganizationPageProps): Promise<JSX.Element> => {
   const { slug } = await params;
   const h = await headers();
 
