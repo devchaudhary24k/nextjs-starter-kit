@@ -1,14 +1,12 @@
-import type { JSX } from "react";
-
 /**
  * Notification Page
  *
  * Renders the user's notification preference page.
  * This page goes under user settings.
  *
- * @returns {JSX.Element} The rendered Notifications Preference Page.
+ * @returns The rendered Notifications Preference Page.
  */
-const NotificationPage = (): JSX.Element => {
+const NotificationPage = () => {
   return <div>NotificationPage</div>;
 };
 export default NotificationPage;

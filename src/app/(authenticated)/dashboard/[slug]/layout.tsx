@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { cookies, headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
-import type { ReactNode } from "react";
-import type { JSX } from "react";
+import type { PropsWithChildren } from "react";
 
 import Header from "@components/sidebar/header";
 import { SidebarInset, SidebarProvider } from "@components/ui/sidebar";
@@ -17,12 +16,11 @@ export const metadata: Metadata = {
   title: "Dashboard",
 };
 
-type DashboardLayoutProps = {
-  children: ReactNode;
+type DashboardLayoutProps = PropsWithChildren<{
   params: Promise<{
     slug: string;
   }>;
-};
+}>;
 
 /**
  * Dashboard Layout Component.
@@ -35,15 +33,12 @@ type DashboardLayoutProps = {
  * - Providing the organization/user context to sidebar and dashboard children.
  *
  * @async
- * @param {DashboardLayoutProps} props - The layout props
- * @param {ReactNode} props.children - The dashboard page content
- * @param {Promise<{ slug: string }>} props.params - Route parameters (slug wrapped in a promise)
- * @returns {Promise<JSX.Element>} The layout wrapping the dashboard page, with sidebar and header, or redirects/notFound as needed.
+ * @param DashboardLayoutProps - The layout props
+ * @param DashboardLayoutProps.children - The dashboard page content
+ * @param DashboardLayoutProps.params - Route parameters (slug wrapped in a promise)
+ * @returns The layout wrapping the dashboard page, with sidebar and header, or redirects/notFound as needed.
  */
-const DashboardLayout = async ({
-  children,
-  params,
-}: DashboardLayoutProps): Promise<JSX.Element> => {
+const DashboardLayout = async ({ children, params }: DashboardLayoutProps) => {
   const { slug } = await params;
   const cookieStore = await cookies();
   const h = await headers();

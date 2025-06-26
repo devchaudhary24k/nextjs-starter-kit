@@ -1,6 +1,5 @@
 import { headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
-import type { JSX } from "react";
 
 import { auth } from "@/auth/auth";
 
@@ -13,10 +12,10 @@ import { auth } from "@/auth/auth";
  * - Else, redirects to the user's first organization's dashboard.
  *
  * @async
- * @returns {Promise<JSX.Element>} This function does not actually render a page;
+ * @returns This function does not actually render a page;
  * it either redirects or throws a notFound response.
  */
-const DashboardPage = async (): Promise<JSX.Element> => {
+const DashboardPage = async () => {
   const h = await headers();
 
   const session = await auth.api.getSession({ headers: h });

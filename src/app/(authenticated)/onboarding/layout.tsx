@@ -1,13 +1,22 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import type { ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 
 import { auth } from "@/auth/auth";
 
-type OnboardingLayoutProps = {
-  children: ReactNode;
-};
+type OnboardingLayoutProps = PropsWithChildren;
 
+/**
+ * Onboarding Layout
+ *
+ * This function checks the organization list for the logged in user.
+ * - If user already have an organization the user is sent to /dashboard
+ * - If the user doesn't have any organization the onboarding process is continued
+ *
+ * @param OnboardingLayoutProps - The layout properties.
+ * @param OnboardingLayoutProps.children - The child components to be rendered within the layout.
+ * @returns The rendered layout with children
+ */
 const OnboardingLayout = async ({ children }: OnboardingLayoutProps) => {
   const h = await headers();
 

@@ -1,6 +1,5 @@
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
-import type { JSX } from "react";
 
 import SecuritySettingsForm from "@features/user/components/security-settings-form";
 
@@ -14,9 +13,9 @@ import { auth } from "@/auth/auth";
  * password, MFA, passkey options.
  *
  * @async
- * @returns {Promise<JSX.Element>} Page UI or triggers 404 via `notFound()`.
+ * @returns Page UI or triggers 404 via `notFound()`.
  */
-const SecurityPage = async (): Promise<JSX.Element> => {
+const SecurityPage = async () => {
   const h = await headers();
 
   const sessionList = await auth.api.listSessions({

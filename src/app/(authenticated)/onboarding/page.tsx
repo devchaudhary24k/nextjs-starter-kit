@@ -1,5 +1,12 @@
 import OnboardingForm from "@features/authentication/components/onboarding-form";
 
+/**
+ * Onboarding Page
+ *
+ * This page wraps the onboarding form.
+ *
+ * @returns  Renders UI for the page
+ */
 const Page = () => {
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-6 md:p-10">

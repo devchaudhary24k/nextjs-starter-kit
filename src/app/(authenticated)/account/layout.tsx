@@ -1,14 +1,11 @@
-import type { ReactNode } from "react";
-import type { JSX } from "react";
+import type { PropsWithChildren } from "react";
 
 import Header from "@components/sidebar/header";
 import { SidebarInset, SidebarProvider } from "@components/ui/sidebar";
 
 import AppSidebar from "@/features/user/components/app-sidebar";
 
-type layoutProps = {
-  children: ReactNode;
-};
+type layoutProps = PropsWithChildren;
 
 /**
  * Account Layout component that wraps its children.
@@ -20,11 +17,11 @@ type layoutProps = {
  *  - Header
  *  - childrens
  *
- * @param {object} props - The layout properties.
- * @param {ReactNode} props.children - The child components to be rendered within the layout.
- * @returns {JSX.Element} The rendered layout with children.
+ * @param layoutProps - The layout properties.
+ * @param layoutProps.children - The child components to be rendered within the layout.
+ * @returns The rendered layout with children.
  */
-const layout = ({ children }: layoutProps): JSX.Element => {
+const layout = ({ children }: layoutProps) => {
   return (
     <SidebarProvider>
       <AppSidebar />

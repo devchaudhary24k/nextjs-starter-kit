@@ -1,6 +1,5 @@
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
-import type { JSX } from "react";
 
 import AccountSettingsForm from "@features/user/components/account-settings-form";
 
@@ -14,9 +13,9 @@ import { auth } from "@/auth/auth";
  * If no user session is found, the page responds with a 404.
  *
  * @async
- * @returns {Promise<JSX.Element>} The rendered account settings page, or triggers a 404 if not authenticated.
+ * @returns The rendered account settings page, or triggers a 404 if not authenticated.
  */
-const AccountPage = async (): Promise<JSX.Element> => {
+const AccountPage = async () => {
   const h = await headers();
 
   const session = await auth.api.getSession({
